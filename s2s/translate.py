@@ -53,7 +53,7 @@ def transcribe_and_translate(
     transcribed_text = transcription.text
 
     # Translate the transcribed text to the target language
-    translated_text = groq_translate(
+    translated_text = translate(
         transcribed_text, "English", target_language)
 
     return transcribed_text, translated_text
@@ -61,7 +61,7 @@ def transcribe_and_translate(
 # Function to translate text from one language to another using Llama 3.1 model
 
 
-def groq_translate(query: str, from_language: str, to_language: str) -> str:
+def translate(query: str, from_language: str, to_language: str) -> str:
     """
     Translates a given query from one language to another using the Groq client and Llama 3.1 model.
 
